@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dengue Fever Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <center>
+    <h1>Dengue Fever Prediction Form</h1>
+    <form action="/prediction" method="post">
+        
+        <table>
+            <tr>
+                <td><label for="Gender">Gender</label></td>
+                <td>
+                    <select name="Gender" id="Gender">
+                        <option value="0">Male</option>
+                        <option value="1">Female</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="Age">Age</label></td>
+                <td><input type="number" min="1" max="100" name="Age" id="Age" required></td>
+            </tr>
+            <tr>
+                <td><label for="Haemoglobin">Hemoglobin</label></td>
+                <td><input type="number" step="0.1" min="1.0" name="Haemoglobin" id="Haemoglobin" required></td>
+            </tr>
+            <tr>
+                <td><label for="ESR">ESR</label></td>
+                <td><input type="number" min="1.0" name="ESR" id="ESR" required></td>
+            </tr>
+            <tr>
+                <td><label for="WBC">WBC</label></td>
+                <td><input type="number" min="1.0" name="WBC" id="WBC" required></td>
+            </tr>
+            <tr>
+                <td><label for="Neutrophil">Neutrophil</label></td>
+                <td><input type="number" min="1" name="Neutrophil" id="Neutrophil" required></td>
+            </tr>
+            <tr>
+                <td><label for="Lymphocyte">Lymphocyte</label></td>
+                <td><input type="number" min="1.0" name="Lymphocyte" id="Lymphocyte" required></td>
+            </tr>
+            <tr>
+                <td><label for="Monocyte">Monocyte</label></td>
+                <td><input type="number" min="1.0" name="Monocyte" id="Monocyte" required></td>
+            </tr>
+            <tr>
+                <td><label for="Eosinophil">Eosinophil</label></td>
+                <td><input type="number" min="1.0" name="Eosinophil" id="Eosinophil" required></td>
+            </tr>
+            <tr>
+                <td><label for="Basophil">Basophil</label></td>
+                <td><input type="number" min="1.0" name="Basophil" id="Basophil" required></td>
+            </tr>
+            <tr>
+                <td><label for="RBC">RBC</label></td>
+                <td><input type="number" min="1.0" name="RBC" id="RBC" required></td>
+            </tr>
+            <tr>
+                <td><label for="Platelets">Platelets</label></td>
+                <td><input type="number" min="1" name="Platelets" id="Platelets" required></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align:center;">
+                    <input type="submit" value="Predict">
+                </td>
+            </tr>
+        </table>
+       
+    </form>
+    {% if prediction %}
+        <h2>Prediction Result: {{ prediction }}</h2>
+    {% endif %}
+     </center>
+</body>
+</html>
